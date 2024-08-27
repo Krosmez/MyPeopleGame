@@ -2,19 +2,21 @@ import "./index.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
-import App from "./App";
 import Modals from "./layouts/Modals";
 import reportWebVitals from "./reportWebVitals";
+import router from "./routes";
 import { GlobalContextProvider } from "./contexts/GlobalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalContextProvider>
-      <Modals />
-      <App />
-    </GlobalContextProvider>
+    <RouterProvider router={router}>
+      <GlobalContextProvider>
+        <Modals />
+      </GlobalContextProvider>
+    </RouterProvider>
   </React.StrictMode>
 );
 
