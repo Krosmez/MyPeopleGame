@@ -2,7 +2,8 @@ import "./modal-styles.css";
 
 import { useCallback, useEffect } from "react";
 
-import Button from "../Buttons/BaseButton";
+import Button from "../Button";
+import Heading from "../Heading";
 import useModal from "../../hooks/useModal";
 import { ReactComponent as CloseIcon } from "../../assets/svg/cross.svg";
 
@@ -25,7 +26,11 @@ const ModalBase = ({ children, modalTitle, className }) => {
       <div className="modal-container">
         <div className={`modal`}>
           <div className={`modal-header`}>
-            {modalTitle && <h2 className="modal-heading">{modalTitle}</h2>}
+            {modalTitle && (
+              <Heading As="h2" className="modal-heading">
+                {modalTitle}
+              </Heading>
+            )}
             <Button onClick={closeModal} Icon={CloseIcon} />
           </div>
           <div className="modal-body">{children}</div>

@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.container.--grow {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.container.--fullwidth {
+    max-width: 100%;
+    margin: 0;
+}
+
+@media (min-width: 36em) {
+
+    /* 36em * 16 = 576px */
+    .container {
+        max-width: 50rem;
+    }
+}
+
+@media (min-width: 48em) {
+
+    /* 48em * 16 = 768px */
+    .container {
+        max-width: 69rem;
+    }
+}
+
+@media (min-width: 62em) {
+
+    /* 62em * 16 = 992px */
+    .container {
+        max-width: 96rem;
+    }
+}
+
+@media (min-width: 75em) {
+
+    /* 75em * 16 = 1200px */
+    .container {
+        max-width: 111rem;
+    }
+}
+
+@media (min-width: 90em) {
+
+    /* 90em * 16 = 1440px */
+    .container {
+        max-width: 120rem;
+    }
+}
+
+@media (min-width: 120em) {
+
+    /* 90em * 16 = 1920px */
+    .container {
+        max-width: 168rem;
+    }
+}
