@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#local env
+/src/assets/local
+
 # production
 /build
 
