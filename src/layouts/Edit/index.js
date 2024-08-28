@@ -3,14 +3,15 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import AutoResizeTextarea from "../../components/TextArea";
 import Container from "../../components/Container";
+import Fields from "../../components/Fields";
 import Header from "../../components/Header";
-import Heading from "../../components/Heading";
-import Input from "../../components/Input";
 
 const Edit = () => {
   const [person, setPerson] = useState({});
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+
   let { personId } = useParams();
 
   useEffect(() => {
@@ -25,31 +26,56 @@ const Edit = () => {
       });
   }, [personId]);
 
+  useEffect(() => {
+    if (!person) return;
+    setFirstname(person.firstname);
+    setLastname(person.lastname);
+  }, [person]);
+
   const capitaliseFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
-
-  //   const changeValue = (e) => {
-  //     const newFields = [...person.fields];
-  //     newFields[e.target.id].name = e.target.value;
-  //     setPerson({ ...person, fields: newFields });
-  //   };
 
   return (
     <main className="edit">
       <Header />
       <Container>
-        <Heading As="h2" className="edit-person-name">{`${person.firstname} ${
-          person.lastname ? person.lastname : ""
-        }`}</Heading>
-        {person?.fields?.map((field, index) => (
-          <div key={index}>
-            <Input id={index} label={`t-${index}`} value={field.name} />
-            <Heading As="h3" className="edit-field-title">
-              {capitaliseFirstLetter(field.name)}
-            </Heading>
-            <AutoResizeTextarea initialContent={field.content} />
+        <Container className="edit-person-name">
+          <div className="firstname-input">
+            <label
+              htmlFor={firstname}
+              className="label-name screen-reader-text"
+            >
+              Firstname
+            </label>
+            <input
+              id={firstname}
+              type="text"
+              value={firstname}
+              onChange={() => {}}
+            />
           </div>
+          <div className="lastName-input">
+            <label htmlFor={lastname} className="label-name screen-reader-text">
+              Lastname
+            </label>
+            <input
+              id={lastname}
+              type="text"
+              value={lastname}
+              onChange={() => {}}
+            />
+          </div>
+        </Container>
+        {person?.fields?.map((field, index) => (
+          <Fields
+            key={`field-${index}`}
+            id={field.name}
+            label={field.name}
+            personId={personId}
+            initialInputValue={field.name}
+            initialContent={field.content}
+          />
         ))}
       </Container>
     </main>
