@@ -159,7 +159,9 @@ article>*+* {
 body {
   font-size: 1.6rem;
   /* Base : équivalent 16px */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "OpenSans", sans-serif;
+  font-variation-settings: "wght" var(--text-wght), "wdth" var(--text-wdth), "opsz" var(--text-opsz), "GRAD" var(--text-GRAD);
   line-height: 1.5;
   color: var(--color-primary);
+  background-color: var(--color-secondary);
 }

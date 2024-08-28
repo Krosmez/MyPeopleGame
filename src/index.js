@@ -1,3 +1,6 @@
+import "./assets/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf";
+import "./assets/fonts/OpenSans-VariableFont_wdth,wght.ttf";
+import "./variable.css";
 import "./style.css";
 
 import React from "react";
