@@ -1,0 +1,21 @@
+.search-bar {
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 8px;
+}
+
+.search-bar svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.search-bar input {
+    outline: 0;
+    border: 0;
+    padding: .5rem;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+}

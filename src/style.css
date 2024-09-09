@@ -163,5 +163,9 @@ body {
   font-variation-settings: "wght" var(--text-wght), "wdth" var(--text-wdth), "opsz" var(--text-opsz), "GRAD" var(--text-GRAD);
   line-height: 1.5;
   color: var(--color-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-tercary);
+}
+
+main {
+  margin: 3rem auto;
 }

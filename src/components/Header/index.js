@@ -10,7 +10,7 @@ const Header = ({ searchBar, onSearch }) => {
   return (
     <header className="header">
       <Container>
-        <Heading As="h1">
+        <Heading As="h1" className="header-title">
           <NavLink to="/">MyPeopleGame</NavLink>
         </Heading>
         {searchBar && <SearchBar onSearch={onSearch} />}

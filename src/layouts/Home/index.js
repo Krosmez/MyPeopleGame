@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
+import localData from "../../assets/local/data.js";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -12,16 +13,18 @@ const Home = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_LINK}/api/person/list`, {
-      headers: {
-        "ngrok-skip-browser-warning": true,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        setFilteredData(data);
-      });
+    // fetch(`${process.env.REACT_APP_API_LINK}/api/person/list`, {
+    //   headers: {
+    //     "ngrok-skip-browser-warning": true,
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setData(data);
+    //     setFilteredData(data);
+    //   });
+    setData(localData);
+    setFilteredData(localData);
   }, []);
 
   const handleSearch = (e) => {
@@ -40,13 +43,15 @@ const Home = () => {
   return (
     <>
       <Header searchBar onSearch={handleSearch} />
-      <Container>
-        <div className="home-list">
-          {filteredData.map((person, index) => (
-            <Card key={index} person={person} />
-          ))}
-        </div>
-      </Container>
+      <main>
+        <Container>
+          <div className="home-list">
+            {filteredData.map((person, index) => (
+              <Card key={index} person={person} />
+            ))}
+          </div>
+        </Container>
+      </main>
     </>
   );
 };

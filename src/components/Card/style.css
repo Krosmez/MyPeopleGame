@@ -1,20 +1,35 @@
 .card {
-    flex: max(100%, 300px / 4 - 20px);
-    border: 1px solid #ccc;
-    padding: 16px;
+    flex: max(300px, 100%/4 - 20px);
+    padding: 1.6rem;
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-secondary);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-description {
+.card-heading.card-name {
+    font-size: 32px;
+}
+
+.card-description-container {
     margin: 1rem 0;
 }
 
+.card-btn {
+    margin: 2rem auto;
+}
+
 .card-edit-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 16px;
+    padding: 1rem 1.6rem;
     border-radius: 4px;
-    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-edit-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }

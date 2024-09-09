@@ -1,7 +1,7 @@
 .header {
     padding: 1rem 2rem;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background-color: var(--color-secondary);
+    border-bottom: 1px solid var(--color-secondary);
 }
 
 .header .container {
@@ -9,4 +9,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.header-title a {
+    color: var(--color-primary);
 }
